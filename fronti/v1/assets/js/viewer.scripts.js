@@ -1,5 +1,5 @@
 var output = document.getElementById("output");
-var socket = new WebSocket("ws://localhost:8080/api/v1/modules/wifi/viewer");
+var socket = new WebSocket("ws://"+location.host+":8080/api/v1/modules/wifi/viewer");
 
 socket.onopen = function () {
   output.innerHTML += "Status: Connected\n";
