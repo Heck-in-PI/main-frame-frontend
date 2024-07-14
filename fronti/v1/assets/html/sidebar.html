@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <div class="side-bar" id="mySidenav">
+      <div class="logo-name-wrapper" id="logoNameWrapper">
+        <div class="logo-name">
+          
+          <span class="logo-name__name">Hekin PI</span>
+        </div>
+        <button class="logo-name__button">
+          <i
+            class="bx bx-arrow-from-right logo-name__icon"
+            id="logo-name__icon"
+          ></i>
+        </button>
+      </div>
+      <ul class="features-list">
+
+        <li class="features-item inbox active">
+          <i class="bx bxs-inbox features-item-icon inbox-icon"
+          id="about-icon" onclick="loadAbout()"></i>
+          <span class="features-item-text" id="about" onclick="loadAbout()">About</span>
+          <span class="tooltip">About</span>
+        </li>
+        <li class="features-item draft">
+          <i class="bx bx-file-blank features-item-icon" id="modules-icon" onclick="loadModules()"></i>
+          <span class="features-item-text" id="modules" onclick="loadModules()">Modules</span>
+          <span class="inbox-number" id="modules-extend">+</span>
+          <span class="tooltip">Modules</span>
+        </li>
+        <ul class="modules-list" id="contert">
+          <li class="features-item draft" id="wifi">
+            <i class="bx bx-wifi-off features-item-icon" id="wifi-module-icon"></i>
+            <span class="features-item-text" id="wifi-module" onclick="loadWifi()">Wifi</span>
+          </li>
+        </ul>
+      </ul>
+    </div>
+</html>

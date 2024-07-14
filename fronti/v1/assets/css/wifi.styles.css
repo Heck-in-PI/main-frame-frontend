@@ -1,0 +1,147 @@
+:root {
+    --white-color: #fafafb;
+    --background-color: #17171e;
+    --grey-color: #b5b5be;
+    --dark-grey-color: #292932;
+    --special-grey: #090809;
+    --special-orange-2: #7F0405 ;
+    --special-yellow: #e1b133;
+    --special-darker-yellow: #e6cb86;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  background-color: var(--special-grey);
+}
+
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    height: 100vh;
+  }
+  
+.main {
+    height: 100%;
+    padding: 0px 10px;
+    padding-left: 6.4rem;; /* Same as the width of the sidebar */
+    transition: margin-left .5s; /* If you want a transition effect */
+    background-color: var(--special-grey);
+}
+
+
+  .modules-element-list {
+    padding-bottom: 1rem;
+    list-style: none;
+  }
+  
+  .modules-element-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0rem 0.9rem;
+    cursor: pointer;
+    transition: 0.5s ease;
+  }
+  .modules-element-item::before {
+    transition: 0.5s ease;
+    content: '';
+    position: absolute;
+    left: -1.2rem;
+    height: 100%;
+    border-left: 3px solid var(--white-color);
+    border-radius: 2px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .modules-element-item:hover {
+    background-color: var(--special-yellow);
+    transition: 0.5s ease;
+  }
+  
+  .modules-element-item:hover::before {
+    opacity: 1;
+    visibility: unset;
+  }
+  
+  .modules-element-item-text {
+    width: 100%;
+    padding: 1.5rem;
+    transition: opacity 0.6s ease;
+    opacity: 1;
+    color: var(--special-yellow);
+  }
+  .modules-element-item-text:hover {
+    color: var(--white-color);
+  }
+
+  .module-element {
+    padding: 0px 0 0px 30px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+  }
+
+  .attack-item-text {
+    font-size: 15px;
+    width: fit-content;
+    padding: 10px;
+    border: 2px solid var(--white-color);
+    transition: opacity 0.6s ease;
+    opacity: 1;
+    cursor: pointer;
+    color: var(--white-color);
+  }
+
+  .attack-item-text:hover {
+    background-color: var(--white-color);
+    color: var(--background-color);
+  }
+
+
+  table, th, td {
+    background-color: var(--white-color);
+    border: solid 1px #ddd;
+    border-collapse: collapse;
+    padding: 2px 3px;
+    text-align: center;
+  }
+  th { 
+      font-weight:bold;
+  }
+  .resultData {
+    background-color: var(--white-color);
+  }
+
+  .interface-selector {
+    max-height: 0;
+    overflow: hidden;
+    
+  }
+
+  .viewer {
+    width: fit-content;
+    font-size: 15px;
+    padding: 10px;
+    margin-right: 5px;
+    border: 2px solid var(--white-color);
+    cursor: pointer;
+    display: none;
+    place-content: end;
+    pointer-events: none;
+    color: var(--white-color);
+    transition: opacity 0.6s ease;
+  }
+
+  .viewer:hover {
+    background-color: var(--white-color);
+    color: var(--background-color);
+    
+  }

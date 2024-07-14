@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heck-in-PI</title>
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../../assets/css/reset.css">    
+    <link rel="stylesheet" href="../../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../../assets/css/sidebar.styles.css">
+    <link rel="stylesheet" href="../../../assets/css/viewer.styles.css">
+  </head>
+
+  <body>
+
+    <div class="main" id="myMain">
+      <p id="output"></p>
+
+      <ul class="viewer-list" id="viewer-list">
+        <li class="viewer-item" style="margin-bottom: 1.1rem;">
+          <span class="bx bx-wifi viewer-item-icon"></span>
+          <div class="viewer-item-text-container">
+            <span class="viewer-item-text-name" id="id1">name</span>
+            <span class="viewer-item-text-mac" id="id2">mac</span>
+            <span class="viewer-item-text-channel" id="id3">channel</span>
+          </div>
+          <span class="bx bx-lock viewer-item-icon"></span>
+        </li>
+      </ul>
+
+      <ul class="viewer-list" id="viewer-list-client">
+        <li class="viewer-item" style="margin-bottom: 1.1rem;">
+          <div class="viewer-item-text-container-client">
+            <span class="viewer-item-text">client name</span>
+            <span class="viewer-item-text">client mac</span>
+            <span class="viewer-item-text">ap mac</span>
+          </div>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="client-scan">deauth</div>
+        </div>
+      </ul>
+    </div>
+
+    <div id="container"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../../../assets/js/reloader.js"></script>
+    <script src="../../../assets/js/wifi.scripts.js"></script>
+    <script src="../../../assets/js/common.scripts.js"></script>
+    <script src="../../../assets/js/viewer.scripts.js"></script>
+
+</body>
+</html>

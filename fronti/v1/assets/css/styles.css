@@ -1,0 +1,40 @@
+:root {
+    --white-color: #fafafb;
+    --background-color: #17171e;
+    --grey-color: #b5b5be;
+    --dark-grey-color: #292932;
+    --special-grey: #090809;
+    --special-orange-2: #7F0405 ;
+    --special-yellow: #e1b133;
+    --special-darker-yellow: #e6cb86;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4rem;
+    color: var(--white-color);
+    height: 100vh;
+    background-color: #fafafa;
+  }
+  
+  .lead { font-size: 1.5rem; font-weight: 300; }
+  .container { margin: 150px auto; max-width: 960px; color: #000; }
+  
+  .main {
+    height: 100%;
+    padding: 0px 10px;
+    padding-left: 6.4rem;; /* Same as the width of the sidebar */
+    transition: margin-left .5s; /* If you want a transition effect */
+    background-color: var(--special-grey);
+  }

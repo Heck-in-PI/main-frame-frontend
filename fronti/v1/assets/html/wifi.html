@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heck-in-PI</title>
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../assets/css/reset.css">    
+    <link rel="stylesheet" href="../../assets/css/wifi.styles.css">
+    <link rel="stylesheet" href="../../assets/css/sidebar.styles.css">
+
+  </head>
+
+  <body>
+
+    <div class="main" id="myMain">
+      <ul class="modules-element-list">
+        <li class="modules-element-item" onclick="attackExpender('attack1')" id="attack1">
+          <span class="modules-element-item-text">List interfaces</span>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="list-interface" onclick="listInterfaces('list-interface')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('attack2')" id="attack2">
+          <span class="modules-element-item-text">Start ap scanning</span>
+          <div class="viewer" id="ap-scan-viewer" onclick="loadViewer()">view</div>
+        </li>
+        <div class="module-element">
+          <label for="interfaces" style="color: var(--special-yellow);">interfaces :</label>
+          <select name="interfaces" id="interfaces"></select>
+          <div class="attack-item-text" id="ap-scan" onclick="apScan('ap-scan')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('attack3')" id="attack3">
+          <span class="modules-element-item-text">Start client scanning</span>
+          <div class="viewer" id="client-scan-viewer" onclick="loadViewer()">view</div>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="client-scan" onclick="clientScan('client-scan')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('attack4')" id="attack4">
+          <span class="modules-element-item-text">Start handshake capturing</span>
+          <div class="viewer" id="capture-handshake-viewer" onclick="loadViewer()">view</div>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="capture-handshake" onclick="captureHandshake('capture-handshake')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('attack5')" id="attack5">
+          <span class="modules-element-item-text">Probe attack</span>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="probe-attack" onclick="prober('probe-attack')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('attack6')" id="attack6">
+          <span class="modules-element-item-text">Beacon attack</span>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="beacon-attack" onclick="beaconer('beacon-attack')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('attack7')" id="attack7">
+          <span class="modules-element-item-text">Rogue ap attack</span>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="rogue-ap-attack" onclick="rogueAp('rogue-ap-attack')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('stop1')" id="stop1">
+          <span class="modules-element-item-text">kill all process</span>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="kill-all" onclick="killAll('kill-all')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('stop2')" id="stop2">
+          <span class="modules-element-item-text">Stop client scan</span>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="stop-client-scan" onclick="stopClientScan('stop-client-scan')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('stop3')" id="stop3">
+          <span class="modules-element-item-text">Stop handshake capture</span>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="stop-handshake-cpt" onclick="stopHandshakeCpt('stop-handshake-cpt')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('stop4')" id="stop4">
+          <span class="modules-element-item-text">Stop beacon attack</span>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="stop-beacon-attack" onclick="stopBeaconAttack('stop-beacon-attack')">go</div>
+          <p class="resultData"></p>
+        </div>
+        <li class="modules-element-item" onclick="attackExpender('stop5')" id="stop5">
+          <span class="modules-element-item-text">stop rogue ap attack</span>
+        </li>
+        <div class="module-element">
+          <div class="attack-item-text" id="stop-rogue-ap" onclick="stopRogueAp('stop-rogue-ap')">go</div>
+          <p class="resultData"></p>
+        </div>
+      </ul>
+    </div>
+
+    <div id="container"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="../../assets/js/reloader.js"></script>
+    <script src="../../assets/js/wifi.scripts.js"></script>
+    <script src="../../assets/js/common.scripts.js"></script>
+
+  </body>
+</html>

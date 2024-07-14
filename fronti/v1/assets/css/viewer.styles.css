@@ -1,0 +1,107 @@
+:root {
+    --white-color: #fafafb;
+    --background-color: #17171e;
+    --grey-color: #b5b5be;
+    --dark-grey-color: #292932;
+    --special-grey: #090809;
+    --special-orange-2: #7F0405 ;
+    --special-yellow: #e1b133;
+    --special-darker-yellow: #e6cb86;
+}
+
+html,
+body {
+    background-color: var(--special-grey);
+}
+
+.viewer-list {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #292932;
+    list-style: none;
+    font-size: 2.3vw;
+}
+
+.viewer-item {
+    display: flex;
+    position: relative;
+    padding-top: 1.1rem;
+    color: var(--white-color);
+    text-align: center;
+}
+
+.viewer-item-text-container {
+    width: 100%;
+    align-items: center;
+    position: relative;
+}
+
+.viewer-item-text-container span {
+    float:left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.viewer-item-text-name {
+    width: 50%;
+}
+
+.viewer-item-text-mac {
+    width: 30%;
+}
+
+.viewer-item-text-channel {
+    width: 20%;
+}
+
+.viewer-item-text-container-client {
+    width: 100%;
+    align-items: center;
+    position: relative;
+}
+
+.viewer-item-text-container-client span {
+    width: 33.3%;
+}
+
+.viewer-item-text {
+    float:left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.viewer-item-icon {
+    padding-right: 0.5rem;
+    padding-left: 0.25rem;
+}
+
+.module-element {
+    padding: 0px 0 0px 30px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.attack-item-text {
+    font-size: 15px;
+    width: fit-content;
+    padding: 10px;
+    border: 2px solid var(--white-color);
+    transition: opacity 0.6s ease;
+    opacity: 1;
+    cursor: pointer;
+    color: var(--white-color);
+}
+
+.attack-item-text:hover {
+    background-color: var(--white-color);
+    color: var(--background-color);
+}
+
+@media screen and (min-width: 1000px) {
+    .viewer-list {
+        font-size: 1.4rem;
+    }
+  }
+
