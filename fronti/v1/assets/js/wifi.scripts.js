@@ -57,7 +57,7 @@ function apScan(id) {
   
     v1ModulesWifiScanApInterfaceNameGet(V1ModulesWifiScanApInterfaceNameGetParams0).then( response => {
 
-      if (response.response.status == 200) {
+      if (response.response.status == 200 || (response.response.status == 400 && response.data.Error == "ap scanner already running")) {
 
         let viewer = document.getElementById("ap-scan-viewer");
         viewer.style.display = "block";
@@ -85,7 +85,7 @@ function clientScan(id) {
 
     v1ModulesWifiScanClientGet().then( response => {
       
-      if (response.response.status == 200) {
+      if (response.response.status == 200 || (response.response.status == 400 && response.data.Error == "client scanning already running")) {
         let viewer = document.getElementById("client-scan-viewer");
         viewer.style.display = "block";
         viewer.style.pointerEvents = "all";
@@ -114,7 +114,7 @@ function captureHandshake(id) {
 
     v1ModulesWifiCptHandshakeGet().then( response => {
       
-      if (response.response.status == 200) {
+      if (response.response.status == 200 || (response.response.status == 400 && response.data.Error == "capture handshake already running")) {
         let viewer = document.getElementById("capture-handshake-viewer");
         viewer.style.display = "block";
         viewer.style.pointerEvents = "all";
