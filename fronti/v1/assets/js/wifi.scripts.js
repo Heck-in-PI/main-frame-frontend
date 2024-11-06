@@ -6,6 +6,7 @@ function attackExpender(id) {
     } else {
         content.style.maxHeight = content.scrollHeight + "px";
     } 
+    content.lastElementChild.innerHTML = "";
 }
 
 function loadViewer(){
@@ -131,8 +132,48 @@ function captureHandshake(id) {
     });
 }
 
-function prober(id) {}
-function beaconer(id) {}
+function prober(id) {
+
+    const divUper = document.getElementById(id);
+    divShowData = divUper.nextElementSibling;
+    divShowData.innerHTML = "";
+
+    let apMac = document.getElementById('ap-mac').value;
+    let apName = document.getElementById('ap-name').value;
+    if (apMac == "" || apName == "") {
+      divShowData.innerHTML = "apMac and apName should not be emty";
+      var content = divUper.parentElement;
+      content.style.maxHeight = content.scrollHeight + "px";
+      return
+    }
+    
+    var V1ModulesWifiProbePostParams0 = { "body": { "apMac": apMac, "apName": apName, }, };
+
+    v1ModulesWifiProbePost(V1ModulesWifiProbePostParams0).then( response => {});
+}
+
+function beaconer(id) {
+
+  const divUper = document.getElementById(id);
+  divShowData = divUper.nextElementSibling;
+  divShowData.innerHTML = "";
+
+  let numberOfAP = document.getElementById('ap-number').value;
+  let apName = document.getElementById('ap-name').value;
+  let apChannel = document.getElementById('ap-channels').value;
+  let apEncryption = document.getElementById('ap-encryption').value;
+  if (numberOfAP == 0 || apName == "" || apChannel == 0) {
+    divShowData.innerHTML = "numberOfAP and apName and apChannel should not be emty";
+    var content = divUper.parentElement;
+    content.style.maxHeight = content.scrollHeight + "px";
+    return
+  }
+
+  var V1ModulesWifiBeaconPostParams0 = { "body": { "apChannel": apChannel, "apEncryption": apEncryption, "apName": apName, "numberOfAP": numberOfAP, }, };
+
+  v1ModulesWifiBeaconPost(V1ModulesWifiBeaconPostParams0).then( response => {});
+}
+
 function rogueAp(id) {}
 function killAll(id) {
   

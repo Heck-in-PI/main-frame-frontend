@@ -85,6 +85,8 @@ body {
 
 .attack-item-text {
     font-size: 15px;
+    float: left;
+    margin-right: 10px;
     width: fit-content;
     padding: 10px;
     border: 2px solid var(--white-color);

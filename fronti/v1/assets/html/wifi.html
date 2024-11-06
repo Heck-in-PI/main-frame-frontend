@@ -57,16 +57,36 @@
           <span class="modules-element-item-text">Probe attack</span>
         </li>
         <div class="module-element">
+          <label for="ap-mac" class="attack-text">ap mac</label>
+          <input type="text" id="ap-mac" name="ap-mac" placeholder="FF:FF:FF:FF:FF:FF"/>
+          <br>
+          <label for="ap-name" class="attack-text">ap name</label>
+          <input type="text" id="ap-name" name="ap-name" placeholder="Access Point"/>
+
           <div class="attack-item-text" id="probe-attack" onclick="prober('probe-attack')">go</div>
           <p class="resultData"></p>
         </div>
+
         <li class="modules-element-item" onclick="attackExpender('attack6')" id="attack6">
           <span class="modules-element-item-text">Beacon attack</span>
         </li>
         <div class="module-element">
+          <label for="ap-number" class="attack-text">number of APs</label>
+          <input type="number" id="ap-number" name="ap-number" min="1" placeholder="5"/>
+          <br>
+          <label for="ap-name" class="attack-text">ap name</label>
+          <input type="text" id="ap-name" name="ap-name" placeholder="Access Point"/>
+          <br>
+          <label for="ap-channels" class="attack-text">AP channels</label>
+          <input type="number" id="ap-channels" name="ap-channels"  min="1" max="14" placeholder="6"/>
+          <br>
+          <label for="ap-encryption" class="attack-text">AP encryption</label>
+          <input type="checkbox" id="ap-encryption" name="ap-encryption"/>
+
           <div class="attack-item-text" id="beacon-attack" onclick="beaconer('beacon-attack')">go</div>
           <p class="resultData"></p>
         </div>
+
         <li class="modules-element-item" onclick="attackExpender('attack7')" id="attack7">
           <span class="modules-element-item-text">Rogue ap attack</span>
         </li>

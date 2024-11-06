@@ -5,7 +5,12 @@ socket.onopen = function () {
   output.innerHTML += "Status: Connected\n";
 };
 
+socket.onclose = function () {
+  output.innerHTML += "Status: not Connected\n";
+};
+ 
 socket.onmessage = function (e) {
+  socket.send("ack");
   var map = new Map(Object.entries(JSON.parse(e.data)));
   // strength | name | mac | channel | freq
   var viewerList = document.getElementById("viewer-list");
@@ -40,8 +45,6 @@ socket.onmessage = function (e) {
       }
     }
   }
-
-  socket.send("ack");
 };
 
 window.onbeforeunload = function() {
@@ -49,9 +52,7 @@ window.onbeforeunload = function() {
 };
 
 function attackExpender2(id) {
-
-  socket.close();
-
+console.log("getting caleed");
   var coll = document.getElementById(id);
   var content = coll.nextElementSibling;
   if (content.style.maxHeight){
@@ -59,6 +60,7 @@ function attackExpender2(id) {
       window.location.reload();
   } else {
       content.style.maxHeight = content.scrollHeight + "px";
+      socket.close();
   } 
 
   
@@ -70,13 +72,14 @@ function deauther(apMac,clientMac) {
   v1ModulesWifiDeauthPost(deauthBody);
 
 }
-
+// problem coming from reloader.js
 
 function apList(json) {
 
   var liElem = document.createElement("li");
   liElem.className = "viewer-item";
   liElem.id = json.hostname;
+  liElem.onclick = function() {attackExpender2(json.hostname);}
 
   var wifiStrength = document.createElement("span");
   if (json.rssi > -51) {
@@ -118,7 +121,19 @@ function apList(json) {
   wifiLocked.style.color = "#FF0000";
   liElem.appendChild(wifiLocked);
   
+  var divAttack = document.createElement("div");
+  divAttack.className = "module-element";
+
+  var probeAttack = document.createElement("div");
+  probeAttack.innerHTML = '<div class="attack-item-text" onclick="proberSpecial(\''+json.mac+'\',\''+json.hostname+'\')">probe</div>';
+  divAttack.appendChild(probeAttack);
+
+  var beaconAttack = document.createElement("div");
+  beaconAttack.innerHTML = '<div class="attack-item-text" onclick="beaconerSpecial('+5+',\''+json.hostname+'\',\''+json.channel+'\','+true+')">beacon</div>';
+  divAttack.appendChild(beaconAttack);
+
   var viewerList = document.getElementById("viewer-list");
+  viewerList.appendChild(divAttack);
   viewerList.appendChild(liElem);
 }
 
@@ -142,4 +157,16 @@ function clientList(apMac,json) {
 
   var viewerList = document.getElementById("viewer-list-client");
   viewerList.appendChild(liElem);
+}
+
+function proberSpecial(apMac, apName) {
+
+  var V1ModulesWifiProbePostParams0 = { "body": { "apMac": apMac, "apName": apName, }, };
+  v1ModulesWifiProbePost(V1ModulesWifiProbePostParams0).then( response => {});
+}
+
+function beaconerSpecial(numberOfAP, apName, apChannel, apEncryption) {
+
+  var V1ModulesWifiBeaconPostParams0 = { "body": { "apChannel": apChannel, "apEncryption": apEncryption, "apName": apName, "numberOfAP": numberOfAP, }, };
+  v1ModulesWifiBeaconPost(V1ModulesWifiBeaconPostParams0).then( response => {});
 }

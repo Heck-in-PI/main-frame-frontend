@@ -105,6 +105,12 @@ body {
     color: var(--background-color);
   }
 
+  .attack-text {
+    font-size: 15px;
+    transition: opacity 0.6s ease;
+    opacity: 1;
+    color: var(--white-color);
+  }
 
   table, th, td {
     background-color: var(--white-color);
